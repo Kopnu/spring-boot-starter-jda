@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  love.korni.jda.spring.config.JdaAutoConfig
