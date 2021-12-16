@@ -1,0 +1,13 @@
+name: Verify labels in Pull Requests
+
+on:
+  pull_request:
+    types: [opened, labeled, unlabeled, synchronize]
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: zwaldowski/match-label-action@v2
+        with:
+          allowed: 'label:fix, label:features, label:docs, label:tests, label:config'

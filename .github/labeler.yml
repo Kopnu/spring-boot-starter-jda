@@ -1,0 +1,17 @@
+label:build:
+  - ".github/**"
+  - ".gitignore"
+  - "pom.xml"
+
+label:code:
+  - "src/main/*"
+
+label:tests:
+  - "src/test/*"
+
+label:docs:
+  - "docs/**"
+
+label:TRASH:
+  - ".idea/**"
+  - "target/**"

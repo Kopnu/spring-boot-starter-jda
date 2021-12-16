@@ -5,30 +5,11 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ master, develop ]
+    branches: [ master, develop, release/* ]
   pull_request:
-    branches: [ master, develop ]
+    branches: [ master, develop, release/* ]
 
 jobs:
-  compile:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        java: [ 17 ]
-    name: Java ${{ matrix.java }} compile
-    steps:
-      - uses: actions/checkout@v2
-      - name: Cache Maven packages
-        uses: actions/cache@v2
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2
-      - name: Clean and compile
-        uses: actions/setup-java@v1
-        with:
-          java-version: ${{ matrix.java }}
-      - run: mvn -f pom.xml clean compile
   test:
     runs-on: ubuntu-latest
     strategy:
@@ -47,7 +28,7 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: ${{ matrix.java }}
-      - run: mvn -f pom.xml test
+      - run: mvn -f pom.xml clean compile test
   build:
     runs-on: ubuntu-latest
     strategy:
