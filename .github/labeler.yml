@@ -1,0 +1,17 @@
+config:
+  - ".github/**"
+  - ".gitignore"
+  - "pom.xml"
+
+code:
+  - "src/main/*"
+
+tests:
+  - "src/test/*"
+
+documentation:
+  - "docs/**"
+
+TRASH:
+  - ".idea/**"
+  - "target/**"
