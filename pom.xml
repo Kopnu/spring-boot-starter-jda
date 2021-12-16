@@ -84,5 +84,12 @@
         </developer>
     </developers>
 
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Kopnu Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/kopnu/spring-boot-starter-jda</url>
+        </repository>
+    </distributionManagement>
 
 </project>
