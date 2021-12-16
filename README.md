@@ -13,10 +13,12 @@ Setup your Spring Boot application.
 
 **Add dependency**
 
+Check latest release version here: [GitHub Releases](https://github.com/Kopnu/spring-boot-starter-jda/releases)
+
 ```xml
 <dependency>
-    <groupId></groupId>
-    <artifactId></artifactId>
+    <groupId>love.korni</groupId>
+    <artifactId>spring-boot-starter-jda</artifactId>
     <version>VERSION</version>
 </dependency>
 ```
