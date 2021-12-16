@@ -34,7 +34,7 @@ jobs:
     strategy:
       matrix:
         java: [ 17 ]
-    name: Java ${{ matrix.java }} build
+    name: Java ${{ matrix.java }} package
     steps:
       - uses: actions/checkout@v2
       - name: Cache Maven packages
