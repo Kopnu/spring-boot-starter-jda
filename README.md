@@ -15,9 +15,11 @@ Setup your Spring Boot application.
 
 Check latest release version here: [GitHub Releases](https://github.com/Kopnu/spring-boot-starter-jda/releases)
 
+[![](https://jitpack.io/v/Kopnu/spring-boot-starter-jda.svg)](https://jitpack.io/#Kopnu/spring-boot-starter-jda)
+
 ```xml
 <dependency>
-    <groupId>love.korni</groupId>
+    <groupId>com.github.kopnu</groupId>
     <artifactId>spring-boot-starter-jda</artifactId>
     <version>VERSION</version>
 </dependency>
