@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2022 Sergei Kornilov
+ * Licensed under the Apache License, Version 2.0
+ */
+
 package love.korni.jda.spring.config;
 
 import love.korni.jda.spring.JdaProperties;
