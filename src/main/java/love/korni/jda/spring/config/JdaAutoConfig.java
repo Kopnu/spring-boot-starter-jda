@@ -22,6 +22,7 @@ import org.springframework.context.annotation.Configuration;
 import javax.security.auth.login.LoginException;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Auto configuration for JDA.
@@ -47,8 +48,11 @@ public class JdaAutoConfig {
                    List<EventListener> eventListeners) throws LoginException {
         JDABuilder builder = JDABuilder.createDefault(jdaProperties.getToken());
 
-        Activity activity = Activity.of(jdaProperties.getActivity().getType(), jdaProperties.getActivity().getActivity());
-        builder.setActivity(activity);
+        if (Objects.nonNull(jdaProperties.getActivity())) {
+            Activity activity = Activity.of(jdaProperties.getActivity().getType(), jdaProperties.getActivity().getActivity());
+            builder.setActivity(activity);
+        }
+
         builder.setEventManager(eventManager);
         if (!eventListeners.isEmpty()) {
             builder.addEventListeners(eventListeners.toArray());
