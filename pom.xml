@@ -8,6 +8,15 @@
     <artifactId>spring-boot-starter-jda</artifactId>
     <version>0.1.0</version>
 
+    <name>Spring Boot starter for JDA</name>
+    <description>Starter for using JDA with Spring Framework</description>
+    <url>https://github.com/Kopnu/spring-boot-starter-jda</url>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/Kopnu/spring-boot-starter-jda/issues</url>
+    </issueManagement>
+
     <repositories>
         <repository>
             <id>dv8tion</id>
@@ -15,6 +24,21 @@
             <url>https://m2.dv8tion.net/releases</url>
         </repository>
     </repositories>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Sergei Kornilov</name>
+            <email>sergei@korni.love</email>
+            <url>https://github.com/Kopnu</url>
+        </developer>
+    </developers>
 
     <properties>
         <java.version>17</java.version>
@@ -73,16 +97,33 @@
                     </excludes>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
-
-    <developers>
-        <developer>
-            <name>Sergei Kornilov</name>
-            <email>sergei@korni.love</email>
-            <url>https://github.com/Kopnu</url>
-        </developer>
-    </developers>
-
 
 </project>

@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2022 Sergei Kornilov
+ * Licensed under the Apache License, Version 2.0
+ */
+
 package love.korni.jda.spring;
 
 import lombok.Data;
@@ -6,7 +11,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
 
 /**
- * Properties for autoconfiguration JDA.
+ * Properties for auto configuration JDA.
  *
  * @author Sergei_Konilov
  */
