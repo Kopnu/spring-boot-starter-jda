@@ -21,6 +21,7 @@ This is a simple Spring Boot starter for JDA project. See [JDA](https://github.c
     </repository>
 </repositories>
 ```
+jk
 
 **Add dependency**
 
