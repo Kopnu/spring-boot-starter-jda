@@ -1,6 +1,0 @@
-jdk:
-  - openjdk17
-before_install:
-  - echo "Running install openjdk 17"
-  - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
-  - source ./install-jdk.sh --target 17
