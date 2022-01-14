@@ -1,3 +1,4 @@
+[jitpack]: https://img.shields.io/jitpack/v/github/Kopnu/spring-boot-starter-jda
 # Spring Boot Starter for JDA (Java Discord API)
 
 This is a simple Spring Boot starter for JDA project. See [JDA](https://github.com/DV8FromTheWorld/JDA).
@@ -25,6 +26,8 @@ This is a simple Spring Boot starter for JDA project. See [JDA](https://github.c
 **Add dependency**
 
 Check latest release version here: [GitHub Releases](https://github.com/Kopnu/spring-boot-starter-jda/releases)
+
+[ ![jitpack][] ](https://jitpack.io/#Kopnu/spring-boot-starter-jda)
 
 ```xml
 <dependency>
