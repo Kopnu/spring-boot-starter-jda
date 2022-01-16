@@ -2,6 +2,7 @@
 # Spring Boot Starter for JDA (Java Discord API)
 
 This is a simple Spring Boot starter for JDA project. See [JDA](https://github.com/DV8FromTheWorld/JDA).
+Required for configuration JDA as a bean.
 
 ## Summary
 
@@ -77,6 +78,10 @@ public class JdaReadyEventListener implements EventListener {
 ```
 
 That's all you need.
+
+**Usage/Migrate example** 
+
+You can see example here: https://github.com/Kopnu/study-discord-bot/pull/1/files
 
 ## Properties
 
