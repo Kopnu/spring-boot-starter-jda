@@ -10,9 +10,11 @@ import love.korni.jda.spring.JdaProperties;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
+import net.dv8tion.jda.api.entities.SelfUser;
 import net.dv8tion.jda.api.hooks.EventListener;
 import net.dv8tion.jda.api.hooks.IEventManager;
 import net.dv8tion.jda.api.hooks.InterfacedEventManager;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -61,4 +63,10 @@ public class JdaAutoConfig {
         return builder.build();
     }
 
+    @Bean
+    @ConditionalOnBean(JDA.class)
+    @ConditionalOnMissingBean(type = "net.dv8tion.jda.api.entities.SelfUser")
+    public SelfUser selfUser(JDA jda) {
+        return jda.getSelfUser();
+    }
 }
