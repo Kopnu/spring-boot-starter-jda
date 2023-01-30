@@ -47,7 +47,7 @@
 
         <spring-boot-starter.version>2.5.7</spring-boot-starter.version>
 
-        <JDA.version>4.3.0_346</JDA.version>
+        <JDA.version>5.0.0-beta.1</JDA.version>
         <caffeine.version>3.0.4</caffeine.version>
 
         <lombok.version>1.18.22</lombok.version>

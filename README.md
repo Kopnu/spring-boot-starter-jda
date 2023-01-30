@@ -79,6 +79,22 @@ public class JdaReadyEventListener implements EventListener {
 
 That's all you need.
 
+If you want to add your configuration to JDA. For example, you can add intents: 
+
+```java
+@Configuration
+public class JdaConfig {
+
+    @Bean
+    public JDA jda(JDABuilder jdaBuilder) {
+        // Configure your JDA here
+        jdaBuilder.enableIntents(GatewayIntent.getIntents(GatewayIntent.ALL_INTENTS));
+        return jdaBuilder.build();
+    }
+
+}
+```
+
 **Usage/Migrate example** 
 
 You can see example here: https://github.com/Kopnu/study-discord-bot/pull/1/files

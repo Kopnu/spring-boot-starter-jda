@@ -29,7 +29,7 @@ public class JdaProperties {
     @Data
     public static class Activity {
 
-        private ActivityType type = ActivityType.DEFAULT;
+        private ActivityType type = ActivityType.WATCHING;
 
         private String activity;
 

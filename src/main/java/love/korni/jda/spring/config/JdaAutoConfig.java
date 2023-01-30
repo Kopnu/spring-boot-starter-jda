@@ -33,7 +33,6 @@ import java.util.Objects;
  */
 @Configuration
 @EnableConfigurationProperties(JdaProperties.class)
-@ConditionalOnMissingBean(type = "net.dv8tion.jda.api.JDA")
 @ConditionalOnProperty(prefix = "spring.jda", value = "token")
 public class JdaAutoConfig {
 
@@ -44,10 +43,17 @@ public class JdaAutoConfig {
     }
 
     @Bean
+    @ConditionalOnMissingBean(JDA.class)
     @ConditionalOnProperty(value = "spring.jda.auto-create", havingValue = "true", matchIfMissing = true)
-    public JDA jda(JdaProperties jdaProperties,
-                   IEventManager eventManager,
-                   List<EventListener> eventListeners) throws LoginException {
+    public JDA jda(JDABuilder jdaBuilder) {
+        return jdaBuilder.build();
+    }
+
+    @Bean
+    @ConditionalOnProperty(value = "spring.jda.auto-create", havingValue = "true", matchIfMissing = true)
+    public JDABuilder jdaBuilder(JdaProperties jdaProperties,
+                                 IEventManager eventManager,
+                                 List<EventListener> eventListeners) {
         JDABuilder builder = JDABuilder.createDefault(jdaProperties.getToken());
 
         if (Objects.nonNull(jdaProperties.getActivity())) {
@@ -60,7 +66,7 @@ public class JdaAutoConfig {
             builder.addEventListeners(eventListeners.toArray());
         }
 
-        return builder.build();
+        return builder;
     }
 
     @Bean
